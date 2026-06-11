@@ -20,6 +20,7 @@ class DataTransformationConfig:
 class DataTransforation:
     def __init__(self):
         self.data_tranformation_config=DataTransformationConfig()
+        
     def get_transformer_obj(self):
         '''
         This fun will transform the data based on catgeories
@@ -56,6 +57,10 @@ class DataTransforation:
             return preprocessor
         except Exception as e:
             raise CustomException(e,sys)
+        
+
+
+
     def initiate_data_transformation(self,train_path,test_path):
         try:
 
