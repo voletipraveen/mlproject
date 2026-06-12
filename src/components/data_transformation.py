@@ -1,7 +1,10 @@
+
 import os
 import sys
 import pandas as pd
 import numpy as np
+
+#Sk-learn Models
 from sklearn.pipeline import Pipeline
 from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import OneHotEncoder,StandardScaler
@@ -20,7 +23,7 @@ class DataTransformationConfig:
 class DataTransforation:
     def __init__(self):
         self.data_tranformation_config=DataTransformationConfig()
-        
+
     def get_transformer_obj(self):
         '''
         This fun will transform the data based on catgeories
