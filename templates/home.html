@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Score Prediction</title>
+    <style>
+        body { font-family: Arial; margin: 40px; }
+        input, select { margin: 5px; padding: 8px; width: 250px; }
+        button { padding: 10px; background: #0078D7; color: white; border: none; cursor: pointer; }
+        .result { margin-top: 20px; font-size: 18px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h2>Enter Student Details</h2>
+    <form action="/predictdata" method="post">
+        <!-- Gender -->
+        <select name="gender" required>
+            <option value="">Select Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select><br>
+
+        <!-- Ethnicity -->
+        <select name="ethnicity" required>
+            <option value="">Select Ethnicity</option>
+            <option value="group A">Group A</option>
+            <option value="group B">Group B</option>
+            <option value="group C">Group C</option>
+            <option value="group D">Group D</option>
+            <option value="group E">Group E</option>
+        </select><br>
+
+        <!-- Parental Education -->
+        <select name="parental_level_of_education" required>
+            <option value="">Select Parental Level of Education</option>
+            <option value="bachelor's degree">Bachelor's Degree</option>
+            <option value="some college">Some College</option>
+            <option value="master's degree">Master's Degree</option>
+            <option value="associate's degree">Associate's Degree</option>
+            <option value="high school">High School</option>
+            <option value="some high school">Some High School</option>
+        </select><br>
+
+        <!-- Lunch -->
+        <select name="lunch" required>
+            <option value="">Select Lunch Type</option>
+            <option value="free/reduced">Free/Reduced</option>
+            <option value="standard">Standard</option>
+        </select><br>
+
+        <!-- Test Preparation -->
+        <select name="test_preparation_course" required>
+            <option value="">Select Test Preparation Course</option>
+            <option value="none">Not Completed</option>
+            <option value="completed">Completed</option>
+        </select><br>
+
+        <!-- Scores -->
+        <input type="number" step="any" name="reading_score" placeholder="Reading Score" required><br>
+        <input type="number" step="any" name="writing_score" placeholder="Writing Score" required><br>
+
+        <button type="submit">Predict</button>
+        <button type="reset">Refresh</button>
+    </form>
+
+    {% if results %}
+    <div class="result">Predicted Math Score: {{ results }}</div>
+    {% endif %}
+</body>
+</html>
